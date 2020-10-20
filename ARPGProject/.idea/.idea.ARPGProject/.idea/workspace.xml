@@ -20,9 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="962637d3-1700-40ed-8923-b7347688de2c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ARPGProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ARPGProject/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ARPGProject/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ARPGProject/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ARPGProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ARPGProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game/NavMesh.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +52,8 @@
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Misc/CameraFollow.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Player/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/TerrainGenerationEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Environment/TerrainGeneration.cs" />
       </list>
     </option>
   </component>
@@ -64,7 +68,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="ParameterNameHintsOptionsId" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -99,6 +103,7 @@
       <workItem from="1603127913396" duration="63000" />
       <workItem from="1603128045445" duration="4933000" />
       <workItem from="1603192150714" duration="6090000" />
+      <workItem from="1603206436504" duration="2644000" />
     </task>
     <servers />
   </component>
@@ -127,10 +132,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="727" y="244" key="RiderGenerateDialog/0.0.1920.1040/-1920.10.1920.1040@0.0.1920.1040" timestamp="1603131011710" />
-    <state x="108" y="330" key="SettingsEditor" timestamp="1603129171566">
+    <state x="424" y="114" width="998" height="708" key="SettingsEditor" timestamp="1603207971805">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="108" y="330" key="SettingsEditor/0.0.1920.1040/-1920.10.1920.1040@0.0.1920.1040" timestamp="1603129171566" />
+    <state x="424" y="114" width="998" height="708" key="SettingsEditor/0.0.1920.1040/-1920.10.1920.1040@0.0.1920.1040" timestamp="1603207971805" />
     <state x="-1509" y="110" width="1525" height="1027" maximized="true" key="dock-window-1" timestamp="1603131384418">
       <screen x="-1920" y="10" width="1920" height="1040" />
     </state>
