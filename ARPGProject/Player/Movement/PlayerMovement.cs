@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-namespace Resources.Scripts
+namespace Player.Movement
 {
     internal enum PlayerState { Idle, Moving };
     [RequireComponent(typeof(Camera))]
