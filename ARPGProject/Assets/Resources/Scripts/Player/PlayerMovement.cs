@@ -4,12 +4,11 @@ using UnityEngine.AI;
 namespace Resources.Scripts
 {
     internal enum PlayerState { Idle, Moving };
-    [RequireComponent(typeof(Camera))]
     [RequireComponent(typeof(NavMeshAgent))]
     public class PlayerMovement : MonoBehaviour
     {
-        [HideInInspector] public string currentState;
-        [HideInInspector] public NavMeshAgent agent;
+        [HideInInspector] public string currentState; //To be able to refer to _state in custom inspector.
+        [HideInInspector] public NavMeshAgent agent;  //To be able to manipulate agent in custom inspector.
         
         private PlayerState _state;
         private LayerMask _ground;
@@ -17,9 +16,9 @@ namespace Resources.Scripts
         
         private void Start()
         {
+            agent = GetComponent<NavMeshAgent>();
             _mainCam = Camera.main;
             _state = PlayerState.Idle;
-            agent = GetComponent<NavMeshAgent>();
             _ground = LayerMask.NameToLayer("Ground");
         }
 
@@ -28,13 +27,14 @@ namespace Resources.Scripts
             UpdatePlayerState();
             
             if (Input.GetMouseButton(0))
-                CastRay();
+                SetDestination();
         }
 
-        private void CastRay()
+        private void SetDestination()
         {
-            var ray = Physics.Raycast(_mainCam.ScreenPointToRay(Input.mousePosition), out var hit, 99999f);
-            if (!(hit.transform is null) && ray && hit.transform.gameObject.layer == _ground)
+            var ray = _mainCam.ScreenPointToRay(Input.mousePosition);
+            var raycast = Physics.Raycast(ray, out var hit, _mainCam.farClipPlane, ~_ground);
+            if (raycast)
                 agent.destination = hit.point;
         }
 
