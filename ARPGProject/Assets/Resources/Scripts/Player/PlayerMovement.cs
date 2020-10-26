@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.AI;
 
 namespace Resources.Scripts
@@ -7,19 +8,24 @@ namespace Resources.Scripts
     [RequireComponent(typeof(NavMeshAgent))]
     public class PlayerMovement : MonoBehaviour
     {
+        private PlayerController _controller;
+        
         [HideInInspector] public string currentState; //To be able to refer to _state in custom inspector.
         [HideInInspector] public NavMeshAgent agent;  //To be able to manipulate agent in custom inspector.
         
         private PlayerState _state;
-        private LayerMask _ground;
-        private Camera _mainCam;
-        
+        private int _ground;
+
+        private void Awake()
+        {
+            _controller = GetComponent<PlayerController>();
+        }
+
         private void Start()
         {
             agent = GetComponent<NavMeshAgent>();
-            _mainCam = Camera.main;
             _state = PlayerState.Idle;
-            _ground = LayerMask.NameToLayer("Ground");
+            _ground = LayerMask.GetMask("Ground");
         }
 
         private void Update()
@@ -32,9 +38,8 @@ namespace Resources.Scripts
 
         private void SetDestination()
         {
-            var ray = _mainCam.ScreenPointToRay(Input.mousePosition);
-            var raycast = Physics.Raycast(ray, out var hit, _mainCam.farClipPlane, ~_ground);
-            if (raycast)
+            var ray = _controller.mainCam.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out var hit, _controller.mainCam.farClipPlane, _ground))
                 agent.destination = hit.point;
         }
 
