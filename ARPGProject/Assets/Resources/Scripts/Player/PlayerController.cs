@@ -4,8 +4,12 @@ namespace Resources.Scripts
 {
     public class PlayerController : MonoBehaviour
     {
-        internal PlayerMovement Movement;
-        internal PlayerCombat Combat;
+        // ReSharper disable once InconsistentNaming
+        internal PlayerMovement pMovement;
+        // ReSharper disable once InconsistentNaming
+        internal PlayerCombat pCombat;
+        // ReSharper disable once InconsistentNaming
+        internal PlayerInput pInput;
 
         public int groundLayer;
         public int enemyLayer;
@@ -15,11 +19,12 @@ namespace Resources.Scripts
         private void Awake()
         {
             mainCam = Camera.main;
-            groundLayer = LayerMask.GetMask("Ground");
-            enemyLayer = LayerMask.GetMask("Enemy");
+            groundLayer = LayerMask.NameToLayer("Ground");
+            enemyLayer = LayerMask.NameToLayer("Enemy");
             
-            Movement = GetComponent<PlayerMovement>();
-            Combat = GetComponent<PlayerCombat>();
+            pMovement = GetComponent<PlayerMovement>();
+            pCombat = GetComponent<PlayerCombat>();
+            pInput = GetComponent<PlayerInput>();
         }
     }
 }
