@@ -26,6 +26,7 @@ namespace Resources.Scripts
 
         [Header("Debugging")]
         public Transform target;
+        public EnemyInfo enemyInfo;
 
         public Vector3 enemyToPlayer;
         public Vector3 steerTarget;
@@ -36,7 +37,6 @@ namespace Resources.Scripts
             combatState = CombatState.Idle;
         }
         
-
         private void Update()
         {
             
@@ -44,6 +44,7 @@ namespace Resources.Scripts
             {
                 case CombatState.Attacking:
                     target = master.pInput.hit.transform;
+                    enemyInfo = target.GetComponent<EnemyInfo>();
                     if (Vector3.Distance(target.position, transform.position) > attackRange)
                     {
                         enemyToPlayer = transform.position - target.position;
@@ -71,12 +72,10 @@ namespace Resources.Scripts
 
         private IEnumerator Attack()
         {
-            var info = target.GetComponent<EnemyInfo>();
             _attacking = true;
             while (_attacking)
             {
-                info.TakeDamage(damage);
-                Debug.Log("Did damage!");
+                enemyInfo.TakeDamage(damage);
                 yield return new WaitForSeconds(attackSpeed);
             }
         }

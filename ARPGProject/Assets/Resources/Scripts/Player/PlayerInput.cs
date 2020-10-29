@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using Resources.Scripts.Enemy;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
